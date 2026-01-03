@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About ☁︎ Charlotte Cloudcast</title>
+
+    <!-- font links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Marvel:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- css link -->
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+
+  <body>
+    <header class="navWrap">
+      <div class="container navBar">
+        <!-- company logo -->
+        <a class="logo" href="/" aria-label="Charlotte Cloudcast Home">
+          <img
+            src="/assets/Charlotte.png"
+            alt="Charlotte Cloudcast logo"
+            class="logoImg"
+          />
+        </a>
+
+        <!-- nav bar -->
+        <nav class="navLinks">
+          <a class="navLink" href="/">HOME</a>
+          <a class="navLink" href="/weather">CHECK WEATHER</a>
+          <a class="navLink active" href="/about">ABOUT CREATOR</a>
+        </nav>
+
+        <!-- action button -->
+        <a class="navBtn radarBtn" href="/weather">
+          <span class="fillMask" aria-hidden="true"
+            ><span class="fill"></span
+          ></span>
+          <span class="btnText">Check Weather</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="aboutWrap">
+        <!-- me -->
+        <div class="aboutImgWrap about-img-reveal">
+          <img
+            src="/assets/me.jpeg"
+            alt="Photo of Stephanie"
+            class="aboutImg"
+          />
+        </div>
+
+        <!-- bio -->
+        <div class="aboutText">
+          <div class="heroKicker">ABOUT THE CREATOR</div>
+          <h1 class="aboutTitle">Hi, I’m Stephanie ˙ᵕ˙</h1>
+
+          <div class="about-bio-reveal">
+            <p class="aboutPara">
+              I’m currently learning full-stack web development with a focus on
+              <strong>Node.js</strong>, JavaScript, and building clean,
+              user-friendly applications.
+            </p>
+
+            <p class="aboutPara">
+              This project was created while learning through
+              <strong>Andrew Mead’s Node.js course on Udemy</strong>, which
+              helped me understand backend fundamentals and how everything
+              connects together.
+            </p>
+
+            <p class="aboutPara">
+              I’m passionate about technology, problem-solving, and continuously
+              growing as a developer as I learn and improve in this field. Thank
+              you for visiting my project!
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- social links -->
+      <div class="aboutLinks">
+        <a
+          href="https://www.linkedin.com/in/stephaniepretell/"
+          target="_blank"
+          rel="noopener"
+          class="outlineBtn"
+        >
+          <span class="fillMask" aria-hidden="true">
+            <span class="fill"></span>
+          </span>
+          <span class="btnText">LinkedIn</span>
+        </a>
+
+        <a
+          href="https://github.com/spretell"
+          target="_blank"
+          rel="noopener"
+          class="outlineBtn"
+        >
+          <span class="fillMask" aria-hidden="true">
+            <span class="fill"></span>
+          </span>
+          <span class="btnText">GitHub</span>
+        </a>
+      </div>
+
+      <!-- footer -->
+      <footer class="footer">
+        <nav class="footerNav footerLeft">
+          <a href="/">Home</a>
+          <a href="/weather">Check Weather</a>
+          <a href="/about">About</a>
+        </nav>
+
+        <div class="footerCenter">
+          © <span id="year"></span> Charlotte CloudCast. All rights reserved.
+        </div>
+
+        <div class="footerRight">
+          <span>Data:</span>
+          <a href="https://open-meteo.com/" target="_blank" rel="noopener"
+            >Open-Meteo</a
+          >
+          <span>•</span>
+          <a href="https://api.zippopotam.us/" target="_blank" rel="noopener"
+            >Zippopotam.us</a
+          >
+        </div>
+      </footer>
+    </main>
+
+    <script src="/js/main.js"></script>
+  </body>
+</html>

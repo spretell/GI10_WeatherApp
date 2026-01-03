@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check Weather ☁︎ Charlotte Cloudcast</title>
+
+    <!-- font links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Marvel:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- css link -->
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+
+  <body>
+    <header class="navWrap">
+      <div class="container navBar">
+        <!-- company logo -->
+        <a class="logo" href="/" aria-label="Charlotte Cloudcast Home">
+          <img
+            src="/assets/Charlotte.png"
+            alt="Charlotte Cloudcast logo"
+            class="logoImg"
+          />
+        </a>
+
+        <!-- nav bar -->
+        <nav class="navLinks">
+          <a class="navLink" href="/">HOME</a>
+          <a class="navLink active" href="/weather">CHECK WEATHER</a>
+          <a class="navLink" href="/about">ABOUT CREATOR</a>
+        </nav>
+
+        <!-- action button -->
+        <a class="navBtn radarBtn" href="/weather">
+          <span class="fillMask" aria-hidden="true"
+            ><span class="fill"></span
+          ></span>
+          <span class="btnText">Check Weather</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- page title -->
+      <section class="wxHeader">
+        <div class="heroKicker">CHARLOTTE CLOUDCAST</div>
+        <h1 class="wxTitle">Check the Weather</h1>
+        <p class="wxSub">
+          Enter a Charlotte ZIP or city name. Choose your units. Get local
+          conditions fast.
+        </p>
+      </section>
+
+      <!-- controls -->
+      <section class="wxControls">
+        <form id="form" class="wxForm">
+          <div class="wxGrid">
+            <!-- location -->
+            <div class="wxGroup">
+              <img
+                class="wxIcon"
+                src="/assets/location.png"
+                alt=""
+                aria-hidden="true"
+              />
+              <div class="wxLabel">Location</div>
+              <input
+                id="address"
+                class="wxInput"
+                type="text"
+                placeholder="ZIP or city"
+                value="28202"
+              />
+            </div>
+
+            <!-- unit -->
+            <div class="wxGroup">
+              <img
+                class="wxIcon"
+                src="/assets/measurement.png"
+                alt=""
+                aria-hidden="true"
+              />
+              <div class="wxLabel">Measurements</div>
+
+              <div class="wxRadios">
+                <label>
+                  <input type="radio" name="units" value="imperial" checked />
+                  Imperial
+                </label>
+                <label>
+                  <input type="radio" name="units" value="metric" />
+                  Metric
+                </label>
+              </div>
+            </div>
+
+            <!-- search -->
+            <div class="wxGroup">
+              <img
+                class="wxIcon"
+                src="/assets/weather.png"
+                alt=""
+                aria-hidden="true"
+              />
+              <div class="wxLabel">Search</div>
+              <button id="submitBtn" class="wxBtn" type="submit">Search</button>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <!-- results -->
+      <section id="resultWrap" class="wxResultWrap" aria-live="polite">
+        <div id="output" class="wxResultInner"></div>
+      </section>
+
+      <!-- neighborhood cards -->
+      <section class="wxTips">
+        <h2 class="wxTipsTitle">Not sure what to search?</h2>
+        <p class="wxTipsSub">Try one of these Charlotte neighborhoods:</p>
+
+        <!-- ballantyne -->
+        <div class="cardGrid wxCardGrid">
+          <article class="card wxPick" data-zip="28277">
+            <img
+              class="cardImg"
+              src="/assets/clt-4.jpg"
+              alt="Ballantyne Charlotte"
+            />
+            <div class="cardBody">
+              <div class="cardTitle">Ballantyne</div>
+              <div class="cardMeta zipMeta">Try ZIP 28277</div>
+            </div>
+          </article>
+
+          <!-- myers park-->
+          <article class="card wxPick" data-zip="28207">
+            <img
+              class="cardImg"
+              src="/assets/clt-5.jpg"
+              alt="Myers Park Charlotte"
+            />
+            <div class="cardBody">
+              <div class="cardTitle">Myers Park</div>
+              <div class="cardMeta zipMeta">Try ZIP 28207</div>
+            </div>
+          </article>
+
+          <!-- southpark-->
+          <article class="card wxPick" data-zip="28226">
+            <img
+              class="cardImg"
+              src="/assets/clt-6.jpg"
+              alt="SouthPark Charlotte"
+            />
+            <div class="cardBody">
+              <div class="cardTitle">SouthPark</div>
+              <div class="cardMeta zipMeta">Try ZIP 28226</div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- footer -->
+      <footer class="footer">
+        <nav class="footerNav footerLeft">
+          <a href="/">Home</a>
+          <a href="/weather">Check Weather</a>
+          <a href="/about">About</a>
+        </nav>
+
+        <div class="footerCenter">
+          © <span id="year"></span> Charlotte CloudCast. All rights reserved.
+        </div>
+
+        <div class="footerRight">
+          <span>Data:</span>
+          <a href="https://open-meteo.com/" target="_blank" rel="noopener"
+            >Open-Meteo</a
+          >
+          <span>•</span>
+          <a href="https://api.zippopotam.us/" target="_blank" rel="noopener"
+            >Zippopotam.us</a
+          >
+        </div>
+      </footer>
+    </main>
+
+    <!-- script link -->
+    <script src="/js/weather.js"></script>
+  </body>
+</html>

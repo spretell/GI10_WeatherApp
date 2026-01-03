@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Charlotte Cloudcast</title>
+
+    <!-- font links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Marvel:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- css link -->
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+
+  <body>
+    <header class="navWrap">
+      <div class="container navBar">
+        <!-- company logo -->
+        <a class="logo" href="/" aria-label="Charlotte Cloudcast Home">
+          <img
+            src="/assets/Charlotte.png"
+            alt="Charlotte Cloudcast logo"
+            class="logoImg"
+          />
+        </a>
+
+        <!-- nav bar -->
+        <nav class="navLinks">
+          <a class="navLink active" href="/">HOME</a>
+          <a class="navLink" href="/weather">CHECK WEATHER</a>
+          <a class="navLink" href="/about">ABOUT CREATOR</a>
+        </nav>
+
+        <!-- action button -->
+        <a class="navBtn radarBtn" href="/weather">
+          <span class="fillMask" aria-hidden="true"
+            ><span class="fill"></span
+          ></span>
+          <span class="btnText">Check Weather</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- hero video section -->
+    <main class="container heroCard">
+      <section class="heroMedia">
+        <video class="heroVideo" autoplay muted loop playsinline>
+          <source src="/assets/charlotte-hero.mp4" type="video/mp4" />
+        </video>
+        <div class="heroOverlay"></div>
+
+        <div class="heroCopy">
+          <div class="heroKicker">CHARLOTTE LOCAL WEATHER</div>
+          <div class="heroTitle">Reading the clouds so you don't have to.</div>
+          <p class="heroSub">
+            Search by ZIP or city, switch units, and get results that are local
+            to you.
+          </p>
+        </div>
+
+        <div class="heroBadge">
+          <img
+            src="/assets/Charlotte.png"
+            alt="Charlotte Cloudcast logo"
+            class="badgeLogo"
+          />
+
+          <div class="badgeTitle">LOCAL ☁︎ FAST ☁︎ SIMPLE</div>
+          <div class="badgeSub">Built with Node + APIs</div>
+        </div>
+      </section>
+
+      <div class="strip">
+        <div class="stripPill">
+          Charlotte ZIPs: 28202 • 28203 • 28204 • 28205
+        </div>
+        <div class="brandRow">
+          <p>View current temperature, conditions, and wind.</p>
+        </div>
+      </div>
+
+      <!-- popular neighborhoods section -->
+      <section class="section">
+        <div class="sectionHead">
+          <div>
+            <h2>Popular neighborhoods</h2>
+            <p>Quick picks for some growing Charlotte communities.</p>
+          </div>
+        </div>
+
+        <!-- uptown -->
+        <div class="cardGrid">
+          <article class="card">
+            <img
+              class="cardImg"
+              src="/assets/clt-1.jpg"
+              alt="Uptown Charlotte"
+            />
+            <div class="cardBody">
+              <div class="cardTitle">Uptown</div>
+              <div class="cardMeta zipMeta">Try ZIP 28202</div>
+            </div>
+          </article>
+
+          <!-- south end -->
+          <article class="card">
+            <img
+              class="cardImg"
+              src="/assets/clt-3.jpg"
+              alt="South End Charlotte"
+            />
+            <div class="cardBody">
+              <div class="cardTitle">South End</div>
+              <div class="cardMeta zipMeta">Try ZIP 28203</div>
+            </div>
+          </article>
+
+          <!-- noda -->
+          <article class="card">
+            <img class="cardImg" src="/assets/clt-2.jpg" alt="NoDa Charlotte" />
+            <div class="cardBody">
+              <div class="cardTitle">NoDa</div>
+              <div class="cardMeta zipMeta">Try ZIP 28205</div>
+            </div>
+          </article>
+        </div>
+
+        <!-- zip code guide section -->
+        <section class="zipGuideSplit">
+          <div class="zipGuideCard zip-reveal">
+            <video class="zipCardVideo" autoplay muted loop playsinline>
+              <source src="/assets/clouds.mp4" type="video/mp4" />
+            </video>
+            <div class="zipCardOverlay" aria-hidden="true"></div>
+
+            <div class="zipCardContent">
+              <h3>Find your location</h3>
+              <p>
+                Use the ZIP map to identify your Charlotte neighborhood. Enter a
+                ZIP on the Check Weather page to get accurate local forecasts.
+              </p>
+
+              <ul class="zipSteps">
+                <li>Copy the ZIP code</li>
+                <li>Enter it on the Check Weather page</li>
+                <li>Get results instantly</li>
+              </ul>
+
+              <a class="navBtn radarBtn" href="/weather">
+                <span class="fillMask" aria-hidden="true"
+                  ><span class="fill"></span
+                ></span>
+                <span class="btnText">Check Weather</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="zipGuideMap">
+            <img
+              src="/assets/cltzipmap.PNG"
+              alt="Charlotte ZIP code map"
+              class="zipMapImg"
+            />
+          </div>
+        </section>
+
+        <!-- footer -->
+        <footer class="footer">
+          <nav class="footerNav footerLeft">
+            <a href="/">Home</a>
+            <a href="/weather">Check Weather</a>
+            <a href="/about">About</a>
+          </nav>
+
+          <div class="footerCenter">
+            © <span id="year"></span> Charlotte CloudCast. All rights reserved.
+          </div>
+
+          <div class="footerRight">
+            <span>Data:</span>
+            <a href="https://open-meteo.com/" target="_blank" rel="noopener"
+              >Open-Meteo</a
+            >
+            <span>•</span>
+            <a href="https://api.zippopotam.us/" target="_blank" rel="noopener"
+              >Zippopotam.us</a
+            >
+          </div>
+        </footer>
+      </section>
+    </main>
+
+    <!-- script link -->
+    <script src="/js/main.js"></script>
+  </body>
+</html>
