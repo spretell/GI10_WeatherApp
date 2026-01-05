@@ -8,7 +8,7 @@ const forecast = async (latitude, longitude, units) => {
   // decide which wind speed unit to use based on the units choice ; metric uses kilometers per hour, imperial uses miles per hour
   const windspeedUnit = units === "metric" ? "kmh" : "mph";
 
-  // build the full api url using latitude, longitude, and unit choices ; this url asks open-meteo for current weather data
+  // build the full api url using latitude, longitude, and unit choices
   const url =
     "https://api.open-meteo.com/v1/forecast?latitude=" +
     latitude +
@@ -17,18 +17,24 @@ const forecast = async (latitude, longitude, units) => {
     "&current=temperature_2m,apparent_temperature,weather_code,wind_speed_10m" +
     "&temperature_unit=" +
     temperatureUnit +
-    "&windspeed_unit=" +
+    "&wind_speed_unit=" + // <-- fix here
     windspeedUnit;
 
-  // send a request to the weather api and wait for the response
+  // make the request to the open-meteo api
   const response = await fetch(url);
 
-  // if the request failed , throw an error
+  // if the api responds with an error status (not 200–299)
   if (!response.ok) {
-    throw new Error("Unable to connect to weather service.");
+    // read the raw response text so we can see the real error
+    const text = await response.text();
+
+    // throw a detailed error so it shows up in render logs
+    throw new Error(
+      `unable to connect to weather service. status: ${response.status} body: ${text}`
+    );
   }
 
-  // convert the response data from json into a javascript object
+  // convert the successful response to json
   const data = await response.json();
 
   // grab only the "current" weather section from the api response
